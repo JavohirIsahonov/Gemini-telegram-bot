@@ -1,0 +1,19 @@
+{
+  "name": "namdu-telegram-bot",
+  "version": "1.0.0",
+  "description": "NamDU AI Telegram Bot using Google Gemini API",
+  "main": "telegram_bot.js",
+  "type": "module",
+  "scripts": {
+    "start": "node telegram_bot.js",
+    "dev": "node --watch telegram_bot.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "node-telegram-bot-api": "^0.66.0",
+    "dotenv": "^16.4.5"
+  },
+  "keywords": ["telegram", "bot", "ai", "gemini", "namdu"],
+  "author": "Your Name",
+  "license": "MIT"
+}

@@ -1,0 +1,674 @@
+{
+  "uzbek": {
+    "universitetHaqida": {
+      "toliqNomi": "Fan va texnologiyalar universiteti (USAT)",
+      "qisqachaMalumot": "Fan va texnologiyalar universiteti - har bir talaba o'z salohiyatini ro'yobga chiqarishi, sifatli ta'lim olishi va muvaffaqiyatli kasbga tayyorlanishi mumkin bo'lgan maskandir. Universitet zamonaviy texnologiyalar va innovatsion ta'lim usullari bilan ta'lim beradi.",
+      "litsenziya": {
+        "raqami": "№ 331658",
+        "berilganSana": "2022-yil 27-iyul",
+        "berganTashkilot": "O'zbekiston Respublikasi Vazirlar Mahkamasi huzuridagi Ta'lim sifatini nazorat qilish davlat inspeksiyasi",
+        "havola": "https://license.gov.uz/registry?filter%5Bnumber%5D=331658"
+      },
+      "talabalarSoni": "6500 dan ortiq talaba tahsil olmoqda",
+      "yillikQabul": "3000 dan 5000 nafargacha abituriyent qabul qilinadi",
+      "tashkilEtilganYil": "2021-2022 yillarda tashkil etilgan, litsenziya 2022-yil 27-iyulda berilgan",
+      "birinchiBitiruvchilar": "2025-yil bahorida birinchi bitiruvchilar universitetni tamomlamoqda",
+      "reyting": "O'zbekistondagi nodavlat oliy ta'lim muassasalari orasida TOP-3 talikdan joy olgan",
+      "xalqaroAloqalar": [
+        "AQSh universitetlari",
+        "Xitoy universitetlari",
+        "Belarus universitetlari",
+        "Qatar universitetlari",
+        "Gruziya universitetlari",
+        "Turkiya universitetlari",
+        "BAA universitetlari"
+      ],
+      "xalqaroHamkorlik": "Talabalar va o'qituvchilar uchun almashinuv va stajirovka dasturlari bo'yicha hamkorlik memorandumlari imzolangan",
+      "joylashuvManzili": {
+        "manzil": "Toshkent shahri, Chilonzor tumani, Algoritm dahasi, Diydor ko'chasi, 71-uy",
+        "metroBekatiga": "Olmazor va Chilonzor metro bekatlaridan 5 daqiqalik piyoda yo'l",
+        "transportUlanishi": "Shaharning istalgan nuqtasidan avtobusda yetib kelish imkoniyati",
+        "yandexXarita": "https://yandex.uz/maps/10335/tashkent/?ll=69.163080%2C41.261028&mode=whatshere&whatshere%5Bpoint%5D=69.163055%2C41.261021&whatshere%5Bzoom%5D=19.98&z=19",
+        "googleXarita": "https://www.google.com/maps/search/41.261005,+69.163074?entry=tts",
+        "ochiqEshiklar": "Har kuni soat 09:00 dan 16:00 gacha tashrif buyurish mumkin"
+      },
+      "boglanishUchun": {
+        "telefon": "+99878-888-38-88",
+        "qabulTelefoni": "+998788883888",
+        "qabulSayti": "https://qabul.usat.uz",
+        "asosiyVebsayt": "https://usat.uz",
+        "qabulLanding": "https://qabul2025.usat.uz"
+      },
+      "ijtimoiyTarmoqlar": {
+        "instagram": "https://instagram.com/usatuz",
+        "telegram": "https://t.me/usatuzb",
+        "facebook": "https://facebook.com/usatuz",
+        "youtube": "https://youtube.com/@usatuz"
+      },
+      "filiallar": {
+        "hozirgi": "Faqat Toshkentda asosiy kampus",
+        "rejalar": "2025/2026-o'quv yilidan boshlab Farg'ona va Samarqand shaharlarida filiallar ochilishi rejalashtirilgan"
+      }
+    },
+    "oquvJarayoni": {
+      "oquvBosqichlari": ["Bakalavriat", "Magistratura"],
+      "yonalishlarSoni": {
+        "bakalavriat": "18 ta yo'nalish",
+        "magistratura": "6 ta mutaxassislik"
+      },
+      "bakalavriYonalishlari": [
+        "Dasturiy injiniring",
+        "Kompyuter injiniringi",
+        "Bank ishi",
+        "Moliya va moliyaviy texnologiyalar",
+        "Logistika",
+        "Iqtisodiyot",
+        "Buxgalteriya hisobi",
+        "Turizm va mehmondo'stlik",
+        "Maktabgacha ta'lim",
+        "Boshlang'ich ta'lim",
+        "Maxsus pedagogika",
+        "O'zbek tili va adabiyoti",
+        "Xorijiy til va adabiyoti",
+        "Tarix",
+        "Matematika",
+        "Psixologiya",
+        "Arxitektura",
+        "Ijtimoiy ish"
+      ],
+      "magistraturaYonalishlari": [
+        "Boshlang'ich ta'lim metodikasi",
+        "Tarix ta'lim metodikasi",
+        "Iqtisodiyot",
+        "Buxgalteriya hisobi",
+        "Bank ishi",
+        "Ta'limda axborot texnologiyalari"
+      ],
+      "oquvMuddati": {
+        "bakalavriat": {
+          "kunduzgi": "3-4 yil (yo'nalishga qarab)",
+          "kechki": "3.5-4.5 yil (yo'nalishga qarab)"
+        },
+        "magistratura": "2 yil (faqat kunduzgi)"
+      },
+      "talimShakllari": {
+        "kunduzgi": "Soat 09:00-14:00 oralig'ida",
+        "kechki": "Soat 18:00-21:00 oralig'ida",
+        "sirtqi": "2025/2026-o'quv yilidan boshlab yopildi",
+        "masofaviy": "2025-yil sentyabr oyigacha ochilishi rejalashtirilgan"
+      },
+      "talimTillari": ["O'zbek tili", "Rus tili"],
+      "diplomHaqiqiyligi": "Butun O'zbekistonda tan olinadigan davlat namunasidagi bakalavr diplomi beriladi. Ushbu diplom bilan istalgan hususiy korxonaga yoki davlat idorasiga ishga joylashish mumkin",
+      "amaliyotImkoniyati": "Talabalarga birinchi kursdan amaliyot o'tash imkoniyati",
+      "ishBilanTaminlash": "Universitet barcha talabalarni ish bilan ta'minlashda amaliy yordam ko'rsatadi. 100% ish bilan ta'minlash kafolati beriladi",
+      "talimSifati": "30% nazariya va 70% amaliyot asosida o'qitish",
+      "oquvYiliBoshlanishi": "Har yili 5-10 sentyabr oralig'ida"
+    },
+    "kontraktNarxlari": {
+      "bakalavriat": {
+        "bankIshi": { "kunduzgi": "21,780,000 so'm", "kechki": "17,400,000 so'm" },
+        "boshlangichTalim": { "kunduzgi": "18,480,000 so'm", "kechki": "14,800,000 so'm" },
+        "buxgalteriyaHisobi": { "kunduzgi": "21,780,000 so'm", "kechki": "17,400,000 so'm" },
+        "dasturiyInjiniring": { "kunduzgi": "18,480,000 so'm", "kechki": "14,800,000 so'm" },
+        "iqtisodiyot": { "kunduzgi": "21,780,000 so'm", "kechki": "17,400,000 so'm" },
+        "logistika": { "kunduzgi": "18,480,000 so'm", "kechki": "14,800,000 so'm" },
+        "maktabgachaTalim": { "kunduzgi": "14,190,000 so'm", "kechki": "11,400,000 so'm" },
+        "moliyaTexnologiyalar": { "kunduzgi": "21,780,000 so'm", "kechki": "17,400,000 so'm" },
+        "psixologiya": { "kunduzgi": "18,480,000 so'm", "kechki": "14,800,000 so'm" },
+        "tarix": { "kunduzgi": "18,480,000 so'm", "kechki": "14,800,000 so'm" },
+        "turizm": { "kunduzgi": "18,480,000 so'm", "kechki": "14,800,000 so'm" },
+        "xorijiyTil": { "kunduzgi": "18,480,000 so'm", "kechki": "16,600,000 so'm" },
+        "maxsusPedagogika": { "kunduzgi": "18,480,000 so'm", "kechki": "14,800,000 so'm" },
+        "ozbekTili": { "kunduzgi": "18,480,000 so'm", "kechki": "14,800,000 so'm" },
+        "matematika": { "kunduzgi": "17,380,000 so'm", "kechki": "13,900,000 so'm" },
+        "kompyuterInjiniringi": { "kunduzgi": "17,380,000 so'm", "kechki": "13,900,000 so'm" },
+        "arxitektura": { "kunduzgi": "18,480,000 so'm", "kechki": "15,700,000 so'm" },
+        "ijtimoiyIsh": { "kunduzgi": "17,380,000 so'm", "kechki": "13,900,000 so'm" }
+      },
+      "magistratura": {
+        "boshlangichTalimMetodikasi": "21,800,000 so'm",
+        "tarixTalimMetodikasi": "21,800,000 so'm",
+        "iqtisodiyot": "22,800,000 so'm",
+        "buxgalteriyaHisobi": "21,800,000 so'm",
+        "bankIshi": "22,800,000 so'm",
+        "talimdaAxborotTexnologiyalari": "21,800,000 so'm"
+      },
+      "narxBarqarorligi": "Kontrakt narxi o'qish davomida o'zgarmaydi - 4 yil davomida bir xil narx saqlanadi"
+    },
+    "yillikDaromadPrognozi": {
+      "dasturiyInjiniring": "100-200 mln so'm",
+      "kompyuterInjiniringi": "100-150 mln so'm",
+      "bankIshi": "120-200 mln so'm",
+      "moliyaTexnologiyalar": "120-200 mln so'm",
+      "logistika": "120-200 mln so'm",
+      "iqtisodiyot": "120-200 mln so'm",
+      "buxgalteriyaHisobi": "120-200 mln so'm",
+      "turizm": "80-180 mln so'm",
+      "maktabgachaTalim": "110-150 mln so'm",
+      "boshlangichTalim": "120-180 mln so'm",
+      "maxsusPedagogika": "120-150 mln so'm",
+      "ozbekTili": "120-150 mln so'm",
+      "xorijiyTil": "120-250 mln so'm",
+      "tarix": "110-150 mln so'm",
+      "matematika": "120-150 mln so'm",
+      "psixologiya": "120-180 mln so'm",
+      "arxitektura": "120-200 mln so'm",
+      "ijtimoiyIsh": "110-150 mln so'm"
+    },
+    "infratuzilmaVaQulayliklar": {
+      "bino": "Toshkent shahrining Chilonzor tumanidagi zamonaviy bino",
+      "oquvXonalari": "Keng, shinam va eng yangi texnika bilan jihozlangan o'quv xonalari",
+      "smartTexnologiyalar": "Interaktiv doskalar, proyektorlar, multimedia vositalari",
+      "kutubxona": "22000 dan ortiq kitobga ega kutubxona",
+      "elektronKutubxona": "Har qanday vaqtda foydalanish mumkin",
+      "kompyuterMarkazi": "100 dan ortiq kompyuterga ega kovorking zonasi",
+      "internet": "Butun universitet bo'ylab bepul Wi-Fi",
+      "xavfsizlik": "Face ID turniketlar va qo'riqlash tizimi",
+      "liftEskalator": "Qavatlar bo'ylab qulay harakat uchun",
+      "oshxona": "Arzon va sog'lom ovqatlanish imkoniyati",
+      "faollarZali": "550 o'rinli tadbirlar va konferensiyalar uchun",
+      "sportZali": "Jismoniy faollik uchun",
+      "fotozona": "Esdalik suratlar uchun",
+      "avtoturargoh": "Bepul parking joylari",
+      "yotoqxona": {
+        "holati": "Yotoqxona tashkil etilmoqda - tez orada foydalanishga topshiriladi",
+        "ijaraMalumotlariMarkazi": "Universitetda 'Ijara xonadonlari bo'yicha ma'lumotlar markazi' tashkil etilgan. Ushbu markaz orqali talabalar universitetga yaqin bo'lgan hududda mavjud ijara xonadonlari to'g'risida batafsil ma'lumotlarni va maslahatlarni olishlari mumkin"
+      },
+      "kiyimKodi": "Qat'iy forma talab qilinmaydi - tartibli va odobli kiyinish tavsiya etiladi"
+    },
+    "qabulJarayoni": {
+      "qabulMuddati": "2025-yil 1-iyundan 1-oktabrgacha (kvota to'lsa ertaroq yopilishi mumkin)",
+      "onlineRoyxat": "https://qabul.usat.uz",
+      "imtihonNarxi": "Universitetda imtihon topshirish mutlaqo bepul",
+      "imtihonTartibi": {
+        "fanlarSoni": "2 ta asosiy fan",
+        "savollarSoni": "Har bir fandan 20 ta savol, jami 40 ta test savoli",
+        "minimalBall": "60 ball",
+        "maksimalBall": "204 ball"
+      },
+      "testFanJuftliklari": {
+        "maktabgachaTalim": "Ona tili va adabiyoti + Matematika",
+        "boshlangichTalim": "Ona tili va adabiyoti + Matematika",
+        "tarix": "Tarix + Ingliz tili",
+        "xorijiyTil": "Ingliz tili + Ona tili va adabiyoti",
+        "iqtisodiyot": "Matematika + Ingliz tili",
+        "turizm": "Matematika + Ingliz tili",
+        "psixologiya": "Biologiya + Ona tili va adabiyoti",
+        "buxgalteriyaHisobi": "Matematika + Ingliz tili",
+        "logistika": "Matematika + Ingliz tili",
+        "bankIshi": "Matematika + Ingliz tili",
+        "moliyaTexnologiyalar": "Matematika + Ingliz tili",
+        "ozbekTili": "Ona tili va adabiyoti + Ingliz tili",
+        "maxsusPedagogika": "Biologiya + Ona tili va adabiyoti",
+        "kompyuterInjiniringi": "Matematika + Ingliz tili",
+        "dasturiyInjiniring": "Matematika + Ingliz tili",
+        "matematika": "Matematika + Fizika",
+        "arxitektura": "Matematika + Fizika",
+        "ijtimoiyIsh": "Tarix + Ingliz tili"
+      },
+      "DTMBalliBilanQabul": {
+        "imkoniyati": true,
+        "sharti": "Davlat oliy ta'lim muassasiga test topshirgan bo'lsangiz va kontraktga ballingiz yetmagan bo'lsa, shu ball bilan universitetga imtihonsiz qabul qilinish mumkin",
+        "hujjatTopshirish": "Hujjatlarni qabul.usat.uz sayti orqali yoki https://my.uzbmb.uz/service/19 orqali topshirish mumkin"
+      },
+      "chetTiliSertifikatiImtiyozlari": {
+        "imtihondanOzodEtish": "B1 va undan yuqori darajadagi malaka sertifikatga ega bo'lgan abituriyentlar kirish test imtihonlaridan ozod etiladi",
+        "chegirmalar": {
+          "B1": "5% chegirma",
+          "B2": "10% chegirma",
+          "IELTS55": "10% chegirma"
+        },
+        "qabulQilinadiganTillar": "Nafaqat ingliz tili bo'yicha, balki boshqa tillarda ham shunga tenglashtirilgan sertifikat qabul qilinadi (Cambridge PET, FCE, CAE, Trinity College London, LanguageCert, PTE Academic, Duolingo)"
+      },
+      "shartnoma": {
+        "olishUsuli": "Shartnomani qabul.usat.uz saytida yoki +998788883888 raqamiga qo'ng'iroq qilgan holda shaxsiy menedjerdan olish mumkin",
+        "birinchiTolov": {
+          "muddat": "1-oktyabrgacha",
+          "shart": "Abituriyent shartnoma bo'yicha birinchi to'lovni amalga oshirgandan keyingina talabalikka qabul qilinadi"
+        }
+      },
+      "magistraturaQabul": {
+        "tartib": "Faqat suhbat asosida",
+        "talablar": "Mos yoki turdosh bakalavr yo'nalishini tamomlagan bo'lish shart",
+        "tilSertifikati": "Talab qilinmaydi"
+      },
+      "chetElFuqarolari": "Chet el fuqarolari ham hech qanday cheklovlarsiz o'qishi mumkin"
+    },
+    "moliyaviyShartlar": {
+      "kontraktNarxi": "Kontrakt narxlari 11,4 mln so'mdan boshlanadi",
+      "chegirmalar": {
+        "toliqTolov": "Kontrakt bo'yicha 100% to'lov qilganda 10% chegirma beriladi",
+        "chetTiliSertifikati": {
+          "B1": "5% chegirma",
+          "B2": "10% chegirma"
+        },
+        "ijtimoiyImtiyozlar": {
+          "nogironlik": "1-2 guruh nogironligi uchun 10% chegirma",
+          "yetimlar": "Chin yetimlar uchun 10% chegirma",
+          "yolgizOnaFarzandi": "Yolg'iz ota/ona farzandi uchun 10% chegirma",
+          "harbiyXizmat": "Harbiy xizmatni o'tagan va mukofotlangan fuqarolar uchun 10% chegirma",
+          "kamTaminlangan": "Mahalla yoki hokimiyat tomonidan tasdiqlangan kam ta'minlanganlik uchun 10% chegirma"
+        },
+        "imtiyozlarBirlashishi": "Bir nechta imtiyozlardan bir vaqtda foydalanish mumkin (maksimal 30% gacha)",
+        "chegirmaMuddati": "Barcha chegirmalar faqat 1 o'quv yili uchun amal qiladi"
+      },
+      "tolovUsullari": {
+        "bolib": "Kontraktni yil davomida bo'lib to'lash imkoniyati mavjud",
+        "birinchiTolovKamaytirish": "Abituriyentlarning imkoniyatidan kelib chiqib, birinchi to'lovni 25% gacha kamaytiriladi",
+        "tolovJadval": "4 ga bo'lib to'lasangiz, avgust, oktyabr, yanvar va mart oylarida to'lash mumkin",
+        "boshlangichTolov": "1% yoki 1 million so'm boshlang'ich to'lov bilan joyni band qilish",
+        "onlineTolov": {
+          "payme": "https://i.usat.uz/Payme",
+          "click": "https://indoor.click.uz/pay?id=073239&t=0",
+          "xazna": "https://pay.xazna.uz/pay?branchId=0f85b241-e989-4b22-879f-e45068531c91",
+          "paynet": "https://i.usat.uz/Paynet"
+        }
+      },
+      "talimKrediti": "Ta'lim krediti talabalarimizga beriladi. Ta'lim krediti haqidagi batafsil ma'lumotlarni ixtiyoriy bank filiallaridan olish mumkin",
+      "tolovQaytarish": "O'qishni muzlatganimda to'langan to'lov qismi qaytariladi (foydalanilmagan davr uchun). Boshlang'ich to'lov qaytarilmaydi"
+    },
+    "grantVaStipendiyalar": {
+      "grantOrinlari": "42 ta grant o'rinlari mavjud va har yili munosib talabalarga ajratiladi",
+      "grantTanlovi": {
+        "onlineImtihon": "Kamida 150 ball yoki undan yuqori natija olish shart",
+        "offlineImtihon": "Sentyabr oyida offline grant imtihoni",
+        "grantMuddati": "6 oylik yoki to'liq 1 yillik"
+      },
+      "rektorStipendiyasi": "Har semestrda 'Rektor stipendiyasi' uchun tanlov bo'lib o'tadi. Unda g'olib bo'lganlarga stipendiya to'lab beriladi (miqdori 1 mln so'm atrofida)",
+      "usatStipendiyasi": "Ijtimoiy faollik, intizom va o'zlashtirish asosida USAT stipendiyasi beriladi",
+      "stipendiyaShartlari": "Kunduzgi va kechki ta'lim shaklida o'qiyotgan talabalar ham stipendiya olish huquqiga ega"
+    },
+    "yutuqlarVaMuvaffaqiyatlar": {
+      "zakovatOlimpiadasi": "2023-yil dekabr oyida talabalarimiz 135 ta OTM jamoalari, shu jumladan 1080 nafar talaba ishtirok etgan 'Zakovat' intellektual olimpiadasining respublika bosqichida 1-o'rinni qo'lga kiritdi va 2 mlrd so'm miqdoridagi Prezident sovg'asi bilan taqdirlandi",
+      "talabalarMamnunligi": {
+        "tavsiyaQiladi": "96.8% talabalar universitetni boshqalarga tavsiya qiladi",
+        "qabulJarayoni": "95.9% talabalar qabul jarayoni hech qanday muammosiz o'tganini bildirdi",
+        "qulaySharoit": "87% talabalar USATni tanlashiga qulay sharoit sabab bo'lganini aytdi",
+        "fanKlublar": "98.9% talabalar fan klub yoki qo'shimcha faoliyatlarga qiziqish bildirdi"
+      }
+    },
+    "fanKlublar": [
+      {
+        "nomi": "Biznes va StartUp fan klubi",
+        "tavsif": "Talabalarga real startap loyihalarda qatnashish, biznes reja tuzish va investor topish ko'nikmalarini o'rgatadi",
+        "foydalari": [
+          "Startap loyihada real ishtirok",
+          "Investitsiya olishni o'rganish",
+          "Tadbirkorlar bilan jonli muloqot"
+        ]
+      },
+      {
+        "nomi": "Texnologiya va IT fan klubi",
+        "tavsif": "Dasturlash, sun'iy intellekt, kiberxavfsizlik bo'yicha chuqur bilim beradi va amaliy loyihalarda ishtirok imkonini yaratadi",
+        "foydalari": [
+          "AI va kodlash bo'yicha amaliy mashg'ulotlar",
+          "IT jamoa loyihalarida tajriba",
+          "Kiberxavfsizlik bo'yicha ko'nikmalar"
+        ]
+      },
+      {
+        "nomi": "Marketing va Media fan klubi",
+        "tavsif": "Grafik dizayn, SMM, kontent ishlab chiqarish va brend rivojlantirishga yo'naltirilgan",
+        "foydalari": [
+          "Media va reklama yaratish amaliyoti",
+          "Brend bilan ishlash tajribasi",
+          "Soha yetakchilari bilan trening"
+        ]
+      },
+      {
+        "nomi": "San'at va Ijod fan klubi",
+        "tavsif": "Aktyorlik, notiqlik, sahna chiqishlari va san'atkorlar bilan ustozlik mashg'ulotlari asosida ijodiy rivojlanish maydoni",
+        "foydalari": [
+          "Ijodiy chiqishlar (QVZ, raqs, ashula)",
+          "Sahna va nutq madaniyatini rivojlantirish",
+          "Mashhur san'atkorlar bilan mahorat darslari"
+        ]
+      },
+      {
+        "nomi": "Sayohatchilar va Turizm fan klubi",
+        "tavsif": "Ekskursiyalarni tashkillashtirish, xalqaro talabalar bilan ishlash va amaliy turizm faoliyati bilan shug'ullanish",
+        "foydalari": [
+          "Sayohat va ekskursiyalar tajribasi",
+          "Xalqaro aloqa ko'nikmasi",
+          "Turizm sohasi bilan amaliy tanishuv"
+        ]
+      },
+      {
+        "nomi": "Sport fan klubi",
+        "tavsif": "Sport musobaqalarida qatnashish, sport kontenti yaratish va mashhur sportchilar bilan motivatsion uchrashuvlar tashkil etish",
+        "foydalari": [
+          "Universitet nomidan musobaqalarda qatnashish",
+          "Sport blog va kontent ishlab chiqish",
+          "Sport yulduzlaridan motivatsiya olish"
+        ]
+      },
+      {
+        "nomi": "Psixologiya va Aqliy O'yinlar fan klubi",
+        "tavsif": "Intellektual bellashuvlar, shaxmat, Zakovat va psixologik treninglar orqali fikrlashni rivojlantirish",
+        "foydalari": [
+          "Zakovat va shaxmatda qatnashish",
+          "Strategik va psixologik tahlil qilish",
+          "Mashhur psixologlardan mahorat saboqlari"
+        ]
+      }
+    ],
+    "qoshimchaKurslar": {
+      "unicumAcademy": "IELTS, CEFR B1/B2 darajasiga tayyorlov kurslari",
+      "djangoAcademy": "Web-dasturlash, sun'iy intellekt, SMM va raqamli marketing kurslari"
+    },
+    "tadbirlar": [
+      "Ichki turistik sayohatlar",
+      "Tashqi xorijiy sayohatlar (Gruziya, Turkiya, AQSh)",
+      "Superyulduzlar konsertlari",
+      "Zakovat musobaqalari",
+      "Kibersport turnirlari",
+      "Master-klasslar va seminarlar",
+      "Working & Travel dasturi (1-3 oy davomida chet elda)"
+    ],
+    "oqutuvchilar": {
+      "soni": "100 dan ortiq malakali o'qituvchi va professor",
+      "malakasi": "Xalqaro tajribaga ega, fan nomzodlari va amaliyotchi mutaxassislar",
+      "yondashuv": "Individual yondashuv va murabbiylik tizimi",
+      "metodika": "Zamonaviy metodika va innovatsion pedagogika"
+    },
+    "perevod": {
+      "ichki": "USAT ichidagi yo'nalishlar orasida 1-kursni to'liq yakunlagan talabalar uchun yozda",
+      "tashqi": "Boshqa universitetlardan USATga transkript asosida",
+      "davlatOTMga": "2-kursdan boshlab maxsus imtihon asosida",
+      "tiklash": "Oldin o'qigan bosqichdan boshlab o'qishni davom ettirish mumkin"
+    },
+    "tezSavollar": [
+      {
+        "savol": "Fan va texnologiyalar universitetining litsenziyasi bormi?",
+        "javob": "Ha, universitet № 331658 raqamli davlat litsenziyasiga ega. Litsenziyani ko'rish: https://license.gov.uz/registry?filter%5Bnumber%5D=331658"
+      },
+      {
+        "savol": "Universitetni tamomlagan talabalarga haqiqiy diplom beriladimi?",
+        "javob": "Ha, universitetni tamomlagan talabalarga butun O'zbekistonda tan olinadigan davlat namunasidagi bakalavr diplomi beriladi. Ushbu diplom bilan istalgan hususiy korxonaga yoki davlat idorasiga ishga joylashish mumkin."
+      },
+      {
+        "savol": "Masofaviy ta'lim ochiladimi?",
+        "javob": "Ha, 2025-yil sentyabr oyigacha masofaviy ta'lim shakli ochilishi rejalashtirilgan. Hozirda kechki ta'lim shakliga ro'yxatdan o'tib, keyinchalik masofaviy shaklga o'zgartirish mumkin."
+      },
+      {
+        "savol": "Kontrakt narxlari o'qish davomida oshadimi?",
+        "javob": "Yo'q. Kontrakt narxi o'qishga kirgan paytdagi narxda muzlatiladi va butun 4 yil davomida o'zgarmaydi."
+      },
+      {
+        "savol": "Yotoqxona bormi?",
+        "javob": "Yotoqxona tashkil etilmoqda. Hozirda 'Ijara xonadonlari bo'yicha ma'lumotlar markazi' orqali talabalarni ishonchli va arzon ijaraga joylashtirib berish xizmati mavjud."
+      }
+    ]
+  },
+  "russian": {
+    "universitetHaqida": {
+      "toliqNomi": "Университет науки и технологий (USAT)",
+      "qisqachaMalumot": "Университет науки и технологий - это место, где каждый студент может реализовать свой потенциал, получить качественное образование и успешно подготовиться к карьере. Университет предоставляет образование с использованием современных технологий и инновационных методов обучения.",
+      "litsenziya": {
+        "raqami": "№ 331658",
+        "berilganSana": "27 июля 2022 года",
+        "berganTashkilot": "Государственная инспекция по контролю качества образования при Кабинете Министров Республики Узбекистан",
+        "havola": "https://license.gov.uz/registry?filter%5Bnumber%5D=331658"
+      },
+      "talabalarSoni": "Более 6500 студентов получают образование",
+      "yillikQabul": "От 3000 до 5000 абитуриентов принимается ежегодно",
+      "tashkilEtilganYil": "Основан в 2021-2022 годах, лицензия выдана 27 июля 2022 года",
+      "birinchiBitiruvchilar": "Первые выпускники завершат обучение весной 2025 года",
+      "reyting": "Входит в ТОП-3 частных вузов Узбекистана",
+      "xalqaroAloqalar": [
+        "Университеты США",
+        "Университеты Китая",
+        "Университеты Беларуси",
+        "Университеты Катара",
+        "Университеты Грузии",
+        "Университеты Турции",
+        "Университеты ОАЭ"
+      ],
+      "xalqaroHamkorlik": "Подписаны меморандумы о сотрудничестве по программам обмена и стажировки для студентов и преподавателей",
+      "joylashuvManzili": {
+        "manzil": "г. Ташкент, Чиланзарский район, массив Алгоритм, ул. Дийдор, 71",
+        "metroBekatiga": "5 минут пешком от станций метро Олмазор и Чиланзар",
+        "transportUlanishi": "Доступен автобусом из любой точки города",
+        "yandexXarita": "https://yandex.uz/maps/10335/tashkent/?ll=69.163080%2C41.261028&mode=whatshere&whatshere%5Bpoint%5D=69.163055%2C41.261021&whatshere%5Bzoom%5D=19.98&z=19",
+        "googleXarita": "https://www.google.com/maps/search/41.261005,+69.163074?entry=tts",
+        "ochiqEshiklar": "Ежедневно с 09:00 до 16:00 можно посетить университет"
+      },
+      "boglanishUchun": {
+        "telefon": "+99878-888-38-88",
+        "qabulTelefoni": "+998788883888",
+        "qabulSayti": "https://qabul.usat.uz",
+        "asosiyVebsayt": "https://usat.uz",
+        "qabulLanding": "https://qabul2025.usat.uz"
+      },
+      "ijtimoiyTarmoqlar": {
+        "instagram": "https://instagram.com/usatuz",
+        "telegram": "https://t.me/usatuzb",
+        "facebook": "https://facebook.com/usatuz",
+        "youtube": "https://youtube.com/@usatuz"
+      },
+      "filiallar": {
+        "hozirgi": "Только в Ташкенте основной кампус",
+        "rejalar": "С 2025/2026 учебного года планируется открытие филиалов в Фергане и Самарканде"
+      }
+    },
+    "oquvJarayoni": {
+      "oquvBosqichlari": ["Бакалавриат", "Магистратура"],
+      "yonalishlarSoni": {
+        "bakalavriat": "18 направлений",
+        "magistratura": "6 специальностей"
+      },
+      "bakalavriYonalishlari": [
+        "Программная инженерия",
+        "Компьютерная инженерия",
+        "Банковское дело",
+        "Финансы и финансовые технологии",
+        "Логистика",
+        "Экономика",
+        "Бухгалтерский учет",
+        "Туризм и гостеприимство",
+        "Дошкольное образование",
+        "Начальное образование",
+        "Специальная педагогика",
+        "Узбекский язык и литература",
+        "Иностранный язык и литература",
+        "История",
+        "Математика",
+        "Психология",
+        "Архитектура",
+        "Социальная работа"
+      ],
+      "magistraturaYonalishlari": [
+        "Методика начального образования",
+        "Методика преподавания истории",
+        "Экономика",
+        "Бухгалтерский учет",
+        "Банковское дело",
+        "Информационные технологии в образовании"
+      ],
+      "oquvMuddati": {
+        "bakalavriat": {
+          "kunduzgi": "3-4 года (в зависимости от направления)",
+          "kechki": "3.5-4.5 года (в зависимости от направления)"
+        },
+        "magistratura": "2 года (только дневная форма)"
+      },
+      "talimShakllari": {
+        "kunduzgi": "С 09:00 до 14:00",
+        "kechki": "С 18:00 до 21:00",
+        "sirtqi": "Закрыта с 2025/2026 учебного года",
+        "masofaviy": "Планируется открытие до сентября 2025 года"
+      },
+      "talimTillari": ["Узбекский язык", "Русский язык"],
+      "diplomHaqiqiyligi": "Выдается диплом бакалавра государственного образца, признанный по всему Узбекистану. С этим дипломом можно трудоустроиться в любые частные компании или государственные учреждения",
+      "amaliyotImkoniyati": "Возможность прохождения практики студентами с первого курса",
+      "ishBilanTaminlash": "Университет оказывает практическую помощь в трудоустройстве всех студентов. Гарантируется 100% содействие в трудоустройстве",
+      "talimSifati": "Обучение на основе 30% теории и 70% практики",
+      "oquvYiliBoshlanishi": "Ежегодно с 5 по 10 сентября"
+    },
+    "kontraktNarxlari": {
+      "bakalavriat": {
+        "bankIshi": { "kunduzgi": "21,780,000 сум", "kechki": "17,400,000 сум" },
+        "boshlangichTalim": { "kunduzgi": "18,480,000 сум", "kechki": "14,800,000 сум" },
+        "buxgalteriyaHisobi": { "kunduzgi": "21,780,000 сум", "kechki": "17,400,000 сум" },
+        "dasturiyInjiniring": { "kunduzgi": "18,480,000 сум", "kechki": "14,800,000 сум" },
+        "iqtisodiyot": { "kunduzgi": "21,780,000 сум", "kechki": "17,400,000 сум" },
+        "logistika": { "kunduzgi": "18,480,000 сум", "kechki": "14,800,000 сум" },
+        "maktabgachaTalim": { "kunduzgi": "14,190,000 сум", "kechki": "11,400,000 сум" },
+        "moliyaTexnologiyalar": { "kunduzgi": "21,780,000 сум", "kechki": "17,400,000 сум" },
+        "psixologiya": { "kunduzgi": "18,480,000 сум", "kechki": "14,800,000 сум" },
+        "tarix": { "kunduzgi": "18,480,000 сум", "kechki": "14,800,000 сум" },
+        "turizm": { "kunduzgi": "18,480,000 сум", "kechki": "14,800,000 сум" },
+        "xorijiyTil": { "kunduzgi": "18,480,000 сум", "kechki": "16,600,000 сум" },
+        "maxsusPedagogika": { "kunduzgi": "18,480,000 сум", "kechki": "14,800,000 сум" },
+        "ozbekTili": { "kunduzgi": "18,480,000 сум", "kechki": "14,800,000 сум" },
+        "matematika": { "kunduzgi": "17,380,000 сум", "kechki": "13,900,000 сум" },
+        "kompyuterInjiniringi": { "kunduzgi": "17,380,000 сум", "kechki": "13,900,000 сум" },
+        "arxitektura": { "kunduzgi": "18,480,000 сум", "kechki": "15,700,000 сум" },
+        "ijtimoiyIsh": { "kunduzgi": "17,380,000 сум", "kechki": "13,900,000 сум" }
+      },
+      "magistratura": {
+        "boshlangichTalimMetodikasi": "21,800,000 сум",
+        "tarixTalimMetodikasi": "21,800,000 сум",
+        "iqtisodiyot": "22,800,000 сум",
+        "buxgalteriyaHisobi": "21,800,000 сум",
+        "bankIshi": "22,800,000 сум",
+        "talimdaAxborotTexnologiyalari": "21,800,000 сум"
+      },
+      "narxBarqarorligi": "Стоимость контракта не изменяется в течение обучения - одинаковая цена сохраняется все 4 года"
+    },
+    "yillikDaromadPrognozi": {
+      "dasturiyInjiniring": "100-200 млн сум",
+      "kompyuterInjiniringi": "100-150 млн сум",
+      "bankIshi": "120-200 млн сум",
+      "moliyaTexnologiyalar": "120-200 млн сум",
+      "logistika": "120-200 млн сум",
+      "iqtisodiyot": "120-200 млн сум",
+      "buxgalteriyaHisobi": "120-200 млн сум",
+      "turizm": "80-180 млн сум",
+      "maktabgachaTalim": "110-150 млн сум",
+      "boshlangichTalim": "120-180 млн сум",
+      "maxsusPedagogika": "120-150 млн сум",
+      "ozbekTili": "120-150 млн сум",
+      "xorijiyTil": "120-250 млн сум",
+      "tarix": "110-150 млн сум",
+      "matematika": "120-150 млн сум",
+      "psixologiya": "120-180 млн сум",
+      "arxitektura": "120-200 млн сум",
+      "ijtimoiyIsh": "110-150 млн сум"
+    }
+  },
+  "english": {
+    "universitetHaqida": {
+      "toliqNomi": "University of Science and Technology (USAT)",
+      "qisqachaMalumot": "The University of Science and Technology is a place where every student can realize their potential, receive quality education, and successfully prepare for their career. The university provides education using modern technologies and innovative teaching methods.",
+      "litsenziya": {
+        "raqami": "№ 331658",
+        "berilganSana": "July 27, 2022",
+        "berganTashkilot": "State Inspectorate for Education Quality Control under the Cabinet of Ministers of the Republic of Uzbekistan",
+        "havola": "https://license.gov.uz/registry?filter%5Bnumber%5D=331658"
+      },
+      "talabalarSoni": "More than 6500 students are studying",
+      "yillikQabul": "3000 to 5000 applicants are admitted annually",
+      "tashkilEtilganYil": "Established in 2021-2022, license issued on July 27, 2022",
+      "birinchiBitiruvchilar": "First graduates will complete their studies in spring 2025",
+      "reyting": "Ranked in TOP-3 private universities in Uzbekistan",
+      "xalqaroAloqalar": [
+        "US Universities",
+        "Chinese Universities",
+        "Belarusian Universities",
+        "Qatar Universities",
+        "Georgian Universities",
+        "Turkish Universities",
+        "UAE Universities"
+      ],
+      "xalqaroHamkorlik": "Cooperation memorandums have been signed for student and teacher exchange and internship programs",
+      "joylashuvManzili": {
+        "manzil": "Tashkent city, Chilanzar district, Algoritm area, Diydor street, 71",
+        "metroBekatiga": "5 minutes walk from Olmazor and Chilanzar metro stations",
+        "transportUlanishi": "Accessible by bus from any point in the city",
+        "yandexXarita": "https://yandex.uz/maps/10335/tashkent/?ll=69.163080%2C41.261028&mode=whatshere&whatshere%5Bpoint%5D=69.163055%2C41.261021&whatshere%5Bzoom%5D=19.98&z=19",
+        "googleXarita": "https://www.google.com/maps/search/41.261005,+69.163074?entry=tts",
+        "ochiqEshiklar": "Daily from 09:00 to 16:00 you can visit the university"
+      },
+      "boglanishUchun": {
+        "telefon": "+99878-888-38-88",
+        "qabulTelefoni": "+998788883888",
+        "qabulSayti": "https://qabul.usat.uz",
+        "asosiyVebsayt": "https://usat.uz",
+        "qabulLanding": "https://qabul2025.usat.uz"
+      },
+      "ijtimoiyTarmoqlar": {
+        "instagram": "https://instagram.com/usatuz",
+        "telegram": "https://t.me/usatuzb",
+        "facebook": "https://facebook.com/usatuz",
+        "youtube": "https://youtube.com/@usatuz"
+      },
+      "filiallar": {
+        "hozirgi": "Only main campus in Tashkent",
+        "rejalar": "From 2025/2026 academic year, branches are planned to open in Fergana and Samarkand"
+      }
+    },
+    "oquvJarayoni": {
+      "oquvBosqichlari": ["Bachelor's", "Master's"],
+      "yonalishlarSoni": {
+        "bakalavriat": "18 directions",
+        "magistratura": "6 specialties"
+      },
+      "bakalavriYonalishlari": [
+        "Software Engineering",
+        "Computer Engineering",
+        "Banking",
+        "Finance and Financial Technologies",
+        "Logistics",
+        "Economics",
+        "Accounting",
+        "Tourism and Hospitality",
+        "Preschool Education",
+        "Primary Education",
+        "Special Pedagogy",
+        "Uzbek Language and Literature",
+        "Foreign Language and Literature",
+        "History",
+        "Mathematics",
+        "Psychology",
+        "Architecture",
+        "Social Work"
+      ],
+      "magistraturaYonalishlari": [
+        "Primary Education Methodology",
+        "History Teaching Methodology",
+        "Economics",
+        "Accounting",
+        "Banking",
+        "Information Technologies in Education"
+      ],
+      "oquvMuddati": {
+        "bakalavriat": {
+          "kunduzgi": "3-4 years (depending on direction)",
+          "kechki": "3.5-4.5 years (depending on direction)"
+        },
+        "magistratura": "2 years (full-time only)"
+      },
+      "talimShakllari": {
+        "kunduzgi": "From 09:00 to 14:00",
+        "kechki": "From 18:00 to 21:00",
+        "sirtqi": "Closed from 2025/2026 academic year",
+        "masofaviy": "Planned to open by September 2025"
+      },
+      "talimTillari": ["Uzbek language", "Russian language"],
+      "diplomHaqiqiyligi": "A state-recognized bachelor's diploma is issued, recognized throughout Uzbekistan. With this diploma, you can get employment in any private companies or government institutions",
+      "amaliyotImkoniyati": "Opportunity for students to do internships from the first year",
+      "ishBilanTaminlash": "The university provides practical assistance in employment for all students. 100% employment assistance is guaranteed",
+      "talimSifati": "Education based on 30% theory and 70% practice",
+      "oquvYiliBoshlanishi": "Annually from September 5-10"
+    }
+  },
+  "qoshimchaMalumotlar": {
+    "tillar": ["O'zbek", "Русский", "English"],
+    "saytlar": {
+      "asosiy": "https://usat.uz",
+      "qabul": "https://qabul.usat.uz"
+    },
+    "yangilanganSana": "2025-yil yanvar"
+  }
+}
