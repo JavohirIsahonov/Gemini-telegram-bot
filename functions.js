@@ -1,10 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai"
 import fs from "fs/promises"
 
-/**
- * Google Gemini API bilan o'zaro aloqa qilish uchun mo'ljallangan sinf bo'lib,
- * taqdim etilgan JSON bilimlar bazasiga asoslanib savollarga javob beradigan savdo menejeri vazifasini bajaradi.
- */
+
 export class Generate {
   /**
    * Generate klassini Gemini API tokeni va bilimlar bazasi fayli bilan ishga tushiradi.
@@ -90,6 +87,311 @@ Faqat ushbu ma'lumotlarga asoslanib savollarga javob bering. Agar savol berilgan
   }
 
   /**
+   * Qisqa so'zlar va noto'liq savollar uchun mos javob topish
+   * @param {string} question - Foydalanuvchining savoli
+   * @param {string} language - Tanlangan til
+   * @returns {string|null} - Mos javob yoki null
+   */
+  findQuickAnswer(question, language) {
+    const lowerQuestion = question.toLowerCase().trim()
+
+    // Yo'nalishlar uchun qisqa javoblar
+    const directionKeywords = {
+      uzbek: {
+        // Bank ishi
+        bank: "bankIshi",
+        "bank ishi": "bankIshi",
+        banking: "bankIshi",
+        bankir: "bankIshi",
+
+        // Dasturlash
+        dasturlash: "dasturiyInjiniring",
+        dasturiy: "dasturiyInjiniring",
+        programming: "dasturiyInjiniring",
+        "dasturiy injiniring": "dasturiyInjiniring",
+        kod: "dasturiyInjiniring",
+
+        // Kompyuter
+        kompyuter: "kompyuterInjiniringi",
+        "kompyuter injiniringi": "kompyuterInjiniringi",
+        it: "kompyuterInjiniringi",
+        "axborot texnologiyalari": "kompyuterInjiniringi",
+
+        // Moliya
+        moliya: "moliyaTexnologiyalar",
+        "moliya va moliyaviy texnologiyalar": "moliyaTexnologiyalar",
+        finance: "moliyaTexnologiyalar",
+        moliyaviy: "moliyaTexnologiyalar",
+
+        // Iqtisodiyot
+        iqtisod: "iqtisodiyot",
+        iqtisodiyot: "iqtisodiyot",
+        ekonomika: "iqtisodiyot",
+
+        // Buxgalteriya
+        buxgalter: "buxgalteriyaHisobi",
+        "buxgalteriya hisobi": "buxgalteriyaHisobi",
+        hisobchi: "buxgalteriyaHisobi",
+
+        // Turizm
+        turizm: "turizm",
+        "turizm va mehmondo'stlik": "turizm",
+        sayohat: "turizm",
+
+        // Tillar
+        til: "xorijiyTil",
+        "xorijiy til": "xorijiyTil",
+        ingliz: "xorijiyTil",
+        "ingliz tili": "xorijiyTil",
+
+        // Tarix
+        tarix: "tarix",
+
+        // Matematika
+        matematika: "matematika",
+        math: "matematika",
+
+        // Psixologiya
+        psixolog: "psixologiya",
+        psixologiya: "psixologiya",
+
+        // Arxitektura
+        arxitektura: "arxitektura",
+
+        // Ta'lim
+        maktab: "boshlangichTalim",
+        "boshlang'ich ta'lim": "boshlangichTalim",
+        bolalar: "maktabgachaTalim",
+        "maktabgacha ta'lim": "maktabgachaTalim",
+
+        // Logistika
+        logistika: "logistika",
+
+        // Maxsus pedagogika
+        "maxsus pedagogika": "maxsusPedagogika",
+
+        // O'zbek tili
+        "o'zbek tili": "ozbekTili",
+        "ona tili": "ozbekTili",
+
+        // Ijtimoiy ish
+        "ijtimoiy ish": "ijtimoiyIsh",
+      },
+    }
+
+    // Umumiy savollar uchun - YANGILANGAN VA KENGAYTIRILGAN
+    const generalKeywords = {
+      uzbek: {
+        // Narx va to'lov
+        narx: "kontraktNarxlari",
+        narxlar: "kontraktNarxlari",
+        "kontrakt narxi": "kontraktNarxlari",
+        "kontrakt narxlari": "kontraktNarxlari",
+        "o'qish narxi": "kontraktNarxlari",
+        "to'lov": "moliyaviyShartlar",
+        pul: "moliyaviyShartlar",
+        "bo'lib to'lash": "moliyaviyShartlar",
+        "online to'lash": "moliyaviyShartlar",
+        "plastik karta": "moliyaviyShartlar",
+        "to'lov usullari": "moliyaviyShartlar",
+        
+        // Grant va stipendiya
+        grant: "grantVaStipendiyalar",
+        "grant o'rinlari": "grantVaStipendiyalar",
+        stipendiya: "grantVaStipendiyalar",
+        "rektor stipendiyasi": "grantVaStipendiyalar",
+        "prezident stipendiyasi": "grantVaStipendiyalar",
+        "davlat granti": "grantVaStipendiyalar",
+        "nomli stipendiya": "grantVaStipendiyalar",
+        
+        // Qabul jarayoni
+        qabul: "qabulJarayoni",
+        "qabul muddati": "qabulJarayoni",
+        "qabul kvotasi": "qabulJarayoni",
+        imtihon: "qabulJarayoni",
+        test: "qabulJarayoni",
+        "test fanlar": "qabulJarayoni",
+        "minimal ball": "qabulJarayoni",
+        "kirish ballari": "qabulJarayoni",
+        "kirish imtihoni": "qabulJarayoni",
+        "test shakli": "qabulJarayoni",
+        "test takrorlash": "qabulJarayoni",
+        "natijalar": "qabulJarayoni",
+        hujjat: "qabulJarayoni",
+        hujjatlar: "qabulJarayoni",
+        "onlayn hujjat": "qabulJarayoni",
+        "hujjat topshirish": "qabulJarayoni",
+        "bepul hujjat": "qabulJarayoni",
+        "shaxsiy kabinet": "qabulJarayoni",
+        
+        // Joylashuv
+        manzil: "joylashuvManzili",
+        joy: "joylashuvManzili",
+        "qayerda joylashgan": "joylashuvManzili",
+        "universitet manzili": "joylashuvManzili",
+        
+        // Yotoqxona
+        yotoqxona: "infratuzilmaVaQulayliklar",
+        ijara: "infratuzilmaVaQulayliklar",
+        "talabalar yotoqxonasi": "infratuzilmaVaQulayliklar",
+        "yotoqxona bepul": "infratuzilmaVaQulayliklar",
+        "yashash sharoiti": "infratuzilmaVaQulayliklar",
+        
+        // Aloqa
+        telefon: "boglanishUchun",
+        aloqa: "boglanishUchun",
+        "telefon raqam": "boglanishUchun",
+        sayt: "boglanishUchun",
+        "web-sayt": "boglanishUchun",
+        vebsayt: "boglanishUchun",
+        telegram: "boglanishUchun",
+        instagram: "boglanishUchun",
+        
+        // Ta'lim shakli va muddati
+        "ta'lim shakli": "oquvJarayoni",
+        kunduzgi: "oquvJarayoni",
+        kechki: "oquvJarayoni",
+        sirtqi: "oquvJarayoni",
+        masofaviy: "oquvJarayoni",
+        "o'qish tili": "oquvJarayoni",
+        "o'qish muddati": "oquvJarayoni",
+        "4 yil": "oquvJarayoni",
+        "5 yil": "oquvJarayoni",
+        "dars vaqti": "oquvJarayoni",
+        "darslar boshlanadi": "oquvJarayoni",
+        "oflayn dars": "oquvJarayoni",
+        "onlayn dars": "oquvJarayoni",
+        
+        // Magistratura
+        magistratura: "oquvJarayoni",
+        "magistratura bormi": "oquvJarayoni",
+        
+        // Diplom
+        diplom: "oquvJarayoni",
+        "diplom tan olinadimi": "oquvJarayoni",
+        "xorijda tan olinadimi": "oquvJarayoni",
+        "davlat diplomi": "oquvJarayoni",
+        "xalqaro sertifikat": "oquvJarayoni",
+        
+        // IELTS va til sertifikatlari
+        ielts: "chetTiliSertifikatiImtiyozlari",
+        "ielts kerakmi": "chetTiliSertifikatiImtiyozlari",
+        sertifikat: "chetTiliSertifikatiImtiyozlari",
+        "chet tili": "chetTiliSertifikatiImtiyozlari",
+        "til sertifikati": "chetTiliSertifikatiImtiyozlari",
+        
+        // Ish bilan ta'minlash
+        ish: "oquvJarayoni",
+        "ish topish": "oquvJarayoni",
+        "ish bilan ta'minlash": "oquvJarayoni",
+        "bitiruvchilarga yordam": "oquvJarayoni",
+        "yarim stavka": "qoshimchaMalumotlar",
+        "karyera markazi": "oquvJarayoni",
+        
+        // Sport va faoliyat
+        sport: "infratuzilmaVaQulayliklar",
+        "sport to'garaklari": "fanKlublar",
+        "sport musobaqalari": "qoshimchaMalumotlar",
+        "fan klublar": "fanKlublar",
+        faoliyat: "fanKlublar",
+        tadbirlar: "tadbirlar",
+        festival: "tadbirlar",
+        
+        // Fakultet va yo'nalishlar
+      fakultet: "oquvJarayoni",
+      "nechta fakultet": "oquvJarayoni",
+      "yo'nalish": "oquvJarayoni",
+      "yo'nalishlar soni": "oquvJarayoni",
+      "nechta yo'nalish": "oquvJarayoni",
+
+    // Darslar
+    dars: "oquvJarayoni",
+        darslar: "oquvJarayoni",
+        "dars vaqti": "oquvJarayoni",
+        "necha soat": "oquvJarayoni",
+        "necha daqiqa": "oquvJarayoni",
+        "sessiya": "oquvJarayoni",
+        "imtihonlar": "oquvJarayoni",
+        
+        // Rektor va boshqaruv
+        rektor: "universitetHaqida",
+        "rektor kim": "universitetHaqida",
+        
+        // Imtiyozlar va chegirmalar
+        imtiyoz: "moliyaviyShartlar",
+        imtiyozlar: "moliyaviyShartlar",
+        chegirma: "moliyaviyShartlar",
+        "ijtimoiy imtiyozlar": "moliyaviyShartlar",
+        "nogironlik imtiyozi": "moliyaviyShartlar",
+        
+        // Amaliyot
+        amaliyot: "oquvJarayoni",
+        "amaliyot dasturlari": "oquvJarayoni",
+        "amaliyot bazalari": "qoshimchaMalumotlar",
+        
+        // Xalqaro hamkorlik
+        xalqaro: "universitetHaqida",
+        "xalqaro almashinuv": "universitetHaqida",
+        "chet el": "universitetHaqida",
+        "chet ellik": "qoshimchaMalumotlar",
+        "xorijlik": "universitetHaqida",
+        
+        // Ko'chirish va perevod
+        "ko'chirish": "perevod",
+        perevod: "perevod",
+        "o'qishni ko'chirish": "perevod",
+        "kredit tan olish": "perevod",
+        
+        // Infratuzilma
+        kutubxona: "infratuzilmaVaQulayliklar",
+        laboratoriya: "infratuzilmaVaQulayliklar",
+        "axborot markazi": "infratuzilmaVaQulayliklar",
+        "ovqatlanish joylari": "infratuzilmaVaQulayliklar",
+        internet: "infratuzilmaVaQulayliklar",
+        wifi: "infratuzilmaVaQulayliklar",
+        
+        // Litsenziya va akkreditatsiya
+        litsenziya: "universitetHaqida",
+        akkreditatsiya: "universitetHaqida",
+        "davlat litsenziyasi": "universitetHaqida",
+        
+        // Yangi qo'shilgan kalit so'zlar
+        "yozgi maktab": "qoshimchaMalumotlar",
+        "harbiy kafedra": "qoshimchaMalumotlar",
+        "harbiy tayyorgarlik": "qoshimchaMalumotlar",
+        "iqtidorli talabalar": "qoshimchaMalumotlar",
+        "ilmiy jurnal": "qoshimchaMalumotlar",
+        "ichki stipendiya": "grantVaStipendiyalar",
+        "rag'batlantiruvchi grant": "grantVaStipendiyalar",
+        "to'lov muddati": "moliyaviyShartlar",
+        "shartnoma imzolash": "moliyaviyShartlar",
+        "buxgalteriya bo'limi": "infratuzilmaVaQulayliklar",
+        "dasturiy tillar": "bakalavriYonalishlari"
+      }
+    }
+
+    // Yo'nalish nomlarini tekshirish
+    if (directionKeywords[language]) {
+      for (const [key, value] of Object.entries(directionKeywords[language])) {
+        if (lowerQuestion.includes(key)) {
+          return value
+        }
+      }
+    }
+
+    // Umumiy savollarni tekshirish
+    if (generalKeywords[language]) {
+      for (const [key, value] of Object.entries(generalKeywords[language])) {
+        if (lowerQuestion.includes(key)) {
+          return value
+        }
+      }
+    }
+
+    return null
+  }
+
+  /**
    * Tanlangan tilda javob yaratadi
    * @param {string} question - Foydalanuvchining savoli
    * @param {string} language - Tanlangan til (uzbek, russian, english)
@@ -103,6 +405,14 @@ Faqat ushbu ma'lumotlarga asoslanib savollarga javob bering. Agar savol berilgan
       }
 
       console.log(`Geminiga savol yuborildi (${language}): '${question.substring(0, 50)}...'`)
+
+      // Qisqa savollar uchun tezkor javob topish
+      const quickMatch = this.findQuickAnswer(question, language)
+      let enhancedQuestion = question
+
+      if (quickMatch) {
+        enhancedQuestion = `${question} - ${quickMatch} haqida batafsil ma'lumot bering`
+      }
 
       // Tanlangan til bo'yicha system instruction
       const languageInstructions = {
@@ -123,9 +433,18 @@ Use the following information (only from "english" section):`,
       const systemInstruction = `${languageInstructions[language]}
 ${JSON.stringify(languageData, null, 2)}
 
-Faqat ushbu ma'lumotlarga asoslanib savollarga javob bering. Agar savol berilgan mavzuga aloqador bo'lmasa yoki sizda javob berish uchun yetarli ma'lumot bo'lmasa, buni ochiq ayting va javob bermang.`
+MUHIM QOIDALAR:
+1. Faqat ushbu ma'lumotlarga asoslanib savollarga javob bering
+2. Qisqa so'zlar yoki noto'liq savollar uchun ham mos javob toping (masalan: "bank ishi", "dasturlash", "narx", "kontrakt narxlari", "qabul kvotasi", "yotoqxona bepul", "harbiy kafedra" kabi)
+3. Har qanday uzunlikdagi savolga javob bering - qisqa (1-2 so'z), o'rta (1-2 jumla) yoki uzun (ko'p jumlali)
+4. Agar savol berilgan mavzuga aloqador bo'lmasa yoki sizda javob berish uchun yetarli ma'lumot bo'lmasa, aynan shu matnni yozing: "Bu savol uchun ma'lumotlar mavjud emas. USAT universiteti haqida boshqa savollaringiz bo'lsa, bemalol so'rang!"
+5. Javoblaringizda markdown formatlash (**, *, __, \`) ishlatmang - oddiy matn ko'rinishida yozing
+6. Yo'nalish nomlari, narxlar va boshqa aniq ma'lumotlarni to'liq va aniq bering
+7. Kontekstli va murakkab savollar uchun batafsil javob bering
+8. Savolning mazmuniga qarab, tegishli bo'limdan ma'lumot oling va to'liq javob bering
+9. Yangi qo'shilgan ma'lumotlardan ham foydalaning: magistratura mutaxassisliklari, grant turlari, onlayn hujjat topshirish, harbiy tayyorgarlik, iqtidorli talabalar markazi va boshqalar`
 
-      const result = await this.model.generateContent([{ text: systemInstruction }, { text: question }])
+      const result = await this.model.generateContent([{ text: systemInstruction }, { text: enhancedQuestion }])
 
       const response = await result.response
       const text = response.text()
@@ -134,40 +453,40 @@ Faqat ushbu ma'lumotlarga asoslanib savollarga javob bering. Agar savol berilgan
         console.warn(`Gemini API returned an empty text response for question: '${question}'`)
 
         const noAnswerMessages = {
-          uzbek: "Kechirasiz, men savolingizga aniq javob topa olmadim. Boshqa savol berib ko'rishingiz mumkin.",
-          russian: "Извините, я не смог найти точный ответ на ваш вопрос. Попробуйте задать другой вопрос.",
-          english: "Sorry, I couldn't find an exact answer to your question. Please try asking another question.",
+          uzbek:
+            "Bu savol uchun ma'lumotlar mavjud emas. USAT universiteti haqida boshqa savollaringiz bo'lsa, bemalol so'rang!",
+          russian:
+            "Информация по этому вопросу недоступна. Если у вас есть другие вопросы об университете USAT, смело спрашивайте!",
+          english:
+            "Information on this question is not available. If you have other questions about USAT university, feel free to ask!",
         }
 
         return noAnswerMessages[language] || noAnswerMessages.uzbek
       }
 
-      console.log(`Received response from Gemini (${language}): '${text.substring(0, 50)}...'`)
-      return text
+      // Clean the response text - remove markdown formatting
+      const cleanedText = text
+        .replace(/\*\*(.*?)\*\*/g, "$1") // Remove ** bold formatting
+        .replace(/\*(.*?)\*/g, "$1") // Remove * italic formatting
+        .replace(/__(.*?)__/g, "$1") // Remove __ underline formatting
+        .replace(/`(.*?)`/g, "$1") // Remove ` code formatting
+        .trim()
+
+      console.log(`Received response from Gemini (${language}): '${cleanedText.substring(0, 50)}...'`)
+      return cleanedText
     } catch (error) {
       console.error(`An error occurred during content generation: ${error.message}`)
 
       const errorMessages = {
         uzbek:
-          "Kechirasiz, hozirda sun'iy intellekt xizmatida texnik muammo yuzaga keldi. Iltimos, keyinroq urinib ko'ring.",
+          "Bu savol uchun ma'lumotlar mavjud emas. USAT universiteti haqida boshqa savollaringiz bo'lsa, bemalol so'rang!",
         russian:
-          "Извините, в настоящее время возникла техническая проблема с сервисом ИИ. Пожалуйста, попробуйте позже.",
-        english: "Sorry, there is currently a technical issue with the AI service. Please try again later.",
+          "Информация по этому вопросу недоступна. Если у вас есть другие вопросы об университете USAT, смело спрашивайте!",
+        english:
+          "Information on this question is not available. If you have other questions about USAT university, feel free to ask!",
       }
 
-      if (error.message.includes("API")) {
-        return errorMessages[language] || errorMessages.uzbek
-      }
-
-      const generalErrorMessages = {
-        uzbek:
-          "Kechirasiz, so'rovingizni bajarishda kutilmagan xatolik yuz berdi. Iltimos, keyinroq qayta urinib ko'ring.",
-        russian:
-          "Извините, произошла непредвиденная ошибка при обработке вашего запроса. Пожалуйста, попробуйте еще раз позже.",
-        english: "Sorry, an unexpected error occurred while processing your request. Please try again later.",
-      }
-
-      return generalErrorMessages[language] || generalErrorMessages.uzbek
+      return errorMessages[language] || errorMessages.uzbek
     }
   }
 }

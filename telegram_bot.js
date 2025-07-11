@@ -28,21 +28,82 @@ const messages = {
       "Salom! Men USAT (Fan va texnologiyalar universiteti) AI botman. Universitet haqida savollaringizga javob berishga tayyorman.",
     languageSelected: "✅ O'zbek tili tanlandi. Endi savollaringizni bering!",
     chooseLanguage: "Iltimos, tilni tanlang:",
-    error: "Kechirasiz, savolingizga javob berishda xatolik yuz berdi. Iltimos, keyinroq urinib ko'ring.",
+    error:
+      "Bu savol uchun ma'lumotlar mavjud emas. USAT universiteti haqida boshqa savollaringiz bo'lsa, bemalol so'rang!",
   },
   russian: {
     welcome: "Привет! Я AI-бот USAT (Университет науки и технологий). Готов ответить на ваши вопросы об университете.",
     languageSelected: "✅ Русский язык выбран. Теперь задавайте ваши вопросы!",
     chooseLanguage: "Пожалуйста, выберите язык:",
-    error: "Извините, произошла ошибка при ответе на ваш вопрос. Пожалуйста, попробуйте позже.",
+    error:
+      "Информация по этому вопросу недоступна. Если у вас есть другие вопросы об университете USAT, смело спрашивайте!",
   },
   english: {
     welcome:
       "Hello! I'm USAT (University of Science and Technology) AI bot. Ready to answer your questions about the university.",
     languageSelected: "✅ English language selected. Now ask your questions!",
     chooseLanguage: "Please choose a language:",
-    error: "Sorry, there was an error answering your question. Please try again later.",
+    error:
+      "Information on this question is not available. If you have other questions about USAT university, feel free to ask!",
   },
+}
+
+// Uzun xabarlarni bo'lib yuborish funksiyasi
+async function sendLongMessage(bot, chatId, text, maxLength = 4000) {
+  if (text.length <= maxLength) {
+    await bot.sendMessage(chatId, text)
+    return
+  }
+
+  console.log(`Uzun xabar aniqlandi (${text.length} belgi). Bo'laklarga bo'linmoqda...`)
+
+  // Matnni bo'laklarga bo'lish
+  const chunks = []
+  let currentChunk = ""
+  const sentences = text.split(". ")
+
+  for (const sentence of sentences) {
+    if ((currentChunk + sentence + ". ").length <= maxLength) {
+      currentChunk += sentence + ". "
+    } else {
+      if (currentChunk) {
+        chunks.push(currentChunk.trim())
+        currentChunk = sentence + ". "
+      } else {
+        // Agar bitta jumla ham juda uzun bo'lsa, uni majburan bo'lish
+        const words = sentence.split(" ")
+        let wordChunk = ""
+        for (const word of words) {
+          if ((wordChunk + word + " ").length <= maxLength) {
+            wordChunk += word + " "
+          } else {
+            if (wordChunk) {
+              chunks.push(wordChunk.trim())
+              wordChunk = word + " "
+            }
+          }
+        }
+        if (wordChunk) {
+          currentChunk = wordChunk
+        }
+      }
+    }
+  }
+
+  if (currentChunk) {
+    chunks.push(currentChunk.trim())
+  }
+
+  console.log(`Xabar ${chunks.length} ta bo'lakga bo'lindi`)
+
+  // Bo'laklarni ketma-ket yuborish
+  for (let i = 0; i < chunks.length; i++) {
+    await bot.sendMessage(chatId, chunks[i])
+    if (i < chunks.length - 1) {
+      // Keyingi xabar uchun kichik kutish
+      await new Promise((resolve) => setTimeout(resolve, 500))
+    }
+  }
 }
 
 async function main() {
@@ -100,8 +161,8 @@ async function main() {
         await bot.deleteMessage(chatId, msg.message_id)
 
         // Tanlangan tilda xush kelibsiz xabari
-        await bot.sendMessage(chatId, messages[selectedLang].welcome)
-        await bot.sendMessage(chatId, messages[selectedLang].languageSelected)
+        await sendLongMessage(bot, chatId, messages[selectedLang].welcome)
+        await sendLongMessage(bot, chatId, messages[selectedLang].languageSelected)
 
         // Callback query ni javoblash
         await bot.answerCallbackQuery(callbackQuery.id)
@@ -145,13 +206,13 @@ async function main() {
       // AI dan javob olamiz (tanlangan tilda)
       const responseText = await usatGenerator.generateInLanguage(userInput, userLang)
 
-      // Javobni yuboramiz
-      await bot.sendMessage(chatId, responseText)
+      // Javobni yuboramiz (uzun bo'lsa bo'lib yuboramiz)
+      await sendLongMessage(bot, chatId, responseText)
     } catch (error) {
       console.error(`Error processing message from ${chatId}: ${error.message}`)
 
       try {
-        await bot.sendMessage(chatId, messages[userLang].error)
+        await sendLongMessage(bot, chatId, messages[userLang].error)
       } catch (sendError) {
         console.error(`Error sending error message to ${chatId}: ${sendError.message}`)
       }

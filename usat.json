@@ -77,12 +77,36 @@
         "Ijtimoiy ish"
       ],
       "magistraturaYonalishlari": [
-        "Boshlang'ich ta'lim metodikasi",
-        "Tarix ta'lim metodikasi",
-        "Iqtisodiyot",
-        "Buxgalteriya hisobi",
-        "Bank ishi",
-        "Ta'limda axborot texnologiyalari"
+        {
+          "nomi": "Ta'lim va tarbiya nazariyasi va metodikasi (boshlang'ich ta'lim)",
+          "kod": "boshlangichTalimMetodikasi",
+          "narx": "21,800,000 so'm"
+        },
+        {
+          "nomi": "Ijtimoiy-gumanitar fanlarni o'qitish metodikasi (tarix)",
+          "kod": "tarixTalimMetodikasi",
+          "narx": "21,800,000 so'm"
+        },
+        {
+          "nomi": "Iqtisodiyot",
+          "kod": "iqtisodiyot",
+          "narx": "22,800,000 so'm"
+        },
+        {
+          "nomi": "Buxgalteriya hisobi",
+          "kod": "buxgalteriyaHisobi",
+          "narx": "21,800,000 so'm"
+        },
+        {
+          "nomi": "Bank ishi",
+          "kod": "bankIshi",
+          "narx": "22,800,000 so'm"
+        },
+        {
+          "nomi": "Ta'limda axborot texnologiyalari",
+          "kod": "talimdaAxborotTexnologiyalari",
+          "narx": "21,800,000 so'm"
+        }
       ],
       "oquvMuddati": {
         "bakalavriat": {
@@ -174,7 +198,11 @@
         "holati": "Yotoqxona tashkil etilmoqda - tez orada foydalanishga topshiriladi",
         "ijaraMalumotlariMarkazi": "Universitetda 'Ijara xonadonlari bo'yicha ma'lumotlar markazi' tashkil etilgan. Ushbu markaz orqali talabalar universitetga yaqin bo'lgan hududda mavjud ijara xonadonlari to'g'risida batafsil ma'lumotlarni va maslahatlarni olishlari mumkin"
       },
-      "kiyimKodi": "Qat'iy forma talab qilinmaydi - tartibli va odobli kiyinish tavsiya etiladi"
+      "kiyimKodi": "Qat'iy forma talab qilinmaydi - tartibli va odobli kiyinish tavsiya etiladi",
+      "axborotResursMarkazi": "Zamonaviy axborot-resurs markazi mavjud",
+      "ovqatlanishJoylari": "Arzon va sog'lom ovqatlanish uchun oshxona mavjud",
+      "onlaynDarslar": "Darslar asosan oflayn o'tiladi, zarurat bo'yicha onlayn imkoniyati ham mavjud",
+      "yozgiMaktab": "Talabalar uchun yozgi maktab va qo'shimcha kurslar tashkil etiladi"
     },
     "qabulJarayoni": {
       "qabulMuddati": "2025-yil 1-iyundan 1-oktabrgacha (kvota to'lsa ertaroq yopilishi mumkin)",
@@ -232,7 +260,12 @@
         "talablar": "Mos yoki turdosh bakalavr yo'nalishini tamomlagan bo'lish shart",
         "tilSertifikati": "Talab qilinmaydi"
       },
-      "chetElFuqarolari": "Chet el fuqarolari ham hech qanday cheklovlarsiz o'qishi mumkin"
+      "chetElFuqarolari": "Chet el fuqarolari ham hech qanday cheklovlarsiz o'qishi mumkin",
+      "qabulKvotasi": "Yillik 3000-5000 nafar abituriyent qabul qilinadi",
+      "onlineHujjat": "Hujjatlarni qabul.usat.uz sayti orqali yoki https://my.uzbmb.uz/service/19 orqali onlayn topshirish mumkin",
+      "hujjatTopshirishBepul": "Universitetda imtihon topshirish va hujjat topshirish mutlaqo bepul",
+      "testTakrorlash": "Test sinovlarini bir necha marta topshirish mumkin",
+      "natijalarEloni": "Natijalar qabul.usat.uz saytida va shaxsiy kabinet orqali e'lon qilinadi"
     },
     "moliyaviyShartlar": {
       "kontraktNarxi": "Kontrakt narxlari 11,4 mln so'mdan boshlanadi",
@@ -276,7 +309,10 @@
       },
       "rektorStipendiyasi": "Har semestrda 'Rektor stipendiyasi' uchun tanlov bo'lib o'tadi. Unda g'olib bo'lganlarga stipendiya to'lab beriladi (miqdori 1 mln so'm atrofida)",
       "usatStipendiyasi": "Ijtimoiy faollik, intizom va o'zlashtirish asosida USAT stipendiyasi beriladi",
-      "stipendiyaShartlari": "Kunduzgi va kechki ta'lim shaklida o'qiyotgan talabalar ham stipendiya olish huquqiga ega"
+      "stipendiyaShartlari": "Kunduzgi va kechki ta'lim shaklida o'qiyotgan talabalar ham stipendiya olish huquqiga ega",
+      "prezidentStipendiyasi": "O'zbekiston Respublikasi Prezidenti stipendiyasi mavjud",
+      "nomliStipendiyalar": "Nomli davlat stipendiyalari beriladi",
+      "davlatGranti": "42 ta grant o'rinlari davlat granti sifatida ajratiladi"
     },
     "yutuqlarVaMuvaffaqiyatlar": {
       "zakovatOlimpiadasi": "2023-yil dekabr oyida talabalarimiz 135 ta OTM jamoalari, shu jumladan 1080 nafar talaba ishtirok etgan 'Zakovat' intellektual olimpiadasining respublika bosqichida 1-o'rinni qo'lga kiritdi va 2 mlrd so'm miqdoridagi Prezident sovg'asi bilan taqdirlandi",
@@ -550,7 +586,7 @@
       "maxsusPedagogika": "120-150 млн сум",
       "ozbekTili": "120-150 млн сум",
       "xorijiyTil": "120-250 млн сум",
-      "tarix": "110-150 млн сум",
+      "tarix": "110-150 млн ��ум",
       "matematika": "120-150 млн сум",
       "psixologiya": "120-180 млн сум",
       "arxitektura": "120-200 млн сум",
@@ -669,6 +705,12 @@
       "asosiy": "https://usat.uz",
       "qabul": "https://qabul.usat.uz"
     },
-    "yangilanganSana": "2025-yil yanvar"
+    "yangilanganSana": "2025-yil yanvar",
+    "harbiyKafedra": "Harbiy kafedra mavjud emas, lekin harbiy tayyorgarlik kurslari tashkil etiladi",
+    "chetEllikOqituvchilar": "Xalqaro hamkorlik doirasida chet ellik o'qituvchilar dars beradi",
+    "yarimStavka": "Talabalar uchun yarim stavkali ish topishda yordam ko'rsatiladi",
+    "iqtidorliTalabalar": "Iqtidorli talabalar bilan ishlash markazi faoliyat yuritadi",
+    "ilmiyJurnallar": "Universitet o'z ilmiy jurnallarini chop etadi",
+    "sportMusobaqalari": "Muntazam sport musobaqalari va tadbirlar o'tkaziladi"
   }
 }
