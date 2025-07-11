@@ -1,7 +1,10 @@
 import { GoogleGenerativeAI } from "@google/generative-ai"
 import fs from "fs/promises"
 
-
+/**
+ * Google Gemini API bilan o'zaro aloqa qilish uchun mo'ljallangan sinf bo'lib,
+ * taqdim etilgan JSON bilimlar bazasiga asoslanib savollarga javob beradigan savdo menejeri vazifasini bajaradi.
+ */
 export class Generate {
   /**
    * Generate klassini Gemini API tokeni va bilimlar bazasi fayli bilan ishga tushiradi.
@@ -40,49 +43,6 @@ export class Generate {
           `Bilimlar bazasi faylini o'qishda xatolik yuzaga keldi: '${this.jsonFilePath}'. Fayl formati va o'qish huquqini tekshiring.`,
         )
       }
-    }
-  }
-
-  /**
-   * Konfiguratsiya qilingan Gemini modeli yordamida foydalanuvchi savoliga javob yaratadi.
-   * @param {string} question - Foydalanuvchining savoli
-   * @returns {Promise<string>} Gemini modelidan yaratilgan javob, yoki muammo yuzaga kelsa, xato xabari
-   */
-  async generate(question) {
-    try {
-      // Ma'lumotlarni yuklaymiz (agar hali yuklanmagan bo'lsa)
-      if (!this.data) {
-        this.data = await this._loadDataFromJson()
-      }
-
-      console.log(`Geminiga savol yuborildi: '${question.substring(0, 50)}...'`)
-
-      const systemInstruction = `Tasavvur qiling, siz sotuv menejerisiz.
-Quyidagi ma'lumotlardan foydalaning:
-${this.data}
-
-Faqat ushbu ma'lumotlarga asoslanib savollarga javob bering. Agar savol berilgan mavzuga aloqador bo'lmasa yoki sizda javob berish uchun yetarli ma'lumot bo'lmasa, buni ochiq ayting va javob bermang. Agar ushbu mavzuda qo'shimcha ma'lumot bera olsangiz, uni faqat tanishish maqsadida taqdim etishingiz mumkin.`
-
-      const result = await this.model.generateContent([{ text: systemInstruction }, { text: question }])
-
-      const response = await result.response
-      const text = response.text()
-
-      if (!text || text.trim() === "") {
-        console.warn(`Gemini API returned an empty text response for question: '${question}'`)
-        return "Kechirasiz, men savolingizga aniq javob topa olmadim. Boshqa savol berib ko'rishingiz mumkin."
-      }
-
-      console.log(`Received response from Gemini: '${text.substring(0, 50)}...'`)
-      return text
-    } catch (error) {
-      console.error(`An error occurred during content generation: ${error.message}`)
-
-      if (error.message.includes("API")) {
-        return "Kechirasiz, hozirda sun'iy intellekt xizmatida texnik muammo yuzaga keldi. Iltimos, keyinroq urinib ko'ring."
-      }
-
-      return "Kechirasiz, so'rovingizni bajarishda kutilmagan xatolik yuz berdi. Iltimos, keyinroq qayta urinib ko'ring."
     }
   }
 
@@ -177,6 +137,139 @@ Faqat ushbu ma'lumotlarga asoslanib savollarga javob bering. Agar savol berilgan
         // Ijtimoiy ish
         "ijtimoiy ish": "ijtimoiyIsh",
       },
+      russian: {
+        // Банковское дело
+        банк: "bankIshi",
+        "банковское дело": "bankIshi",
+        банкир: "bankIshi",
+
+        // Программирование
+        программирование: "dasturiyInjiniring",
+        "программная инженерия": "dasturiyInjiniring",
+        программист: "dasturiyInjiniring",
+
+        // Компьютер
+        компьютер: "kompyuterInjiniringi",
+        "компьютерная инженерия": "kompyuterInjiniringi",
+        "информационные технологии": "kompyuterInjiniringi",
+
+        // Финансы
+        финансы: "moliyaTexnologiyalar",
+        "финансовые технологии": "moliyaTexnologiyalar",
+
+        // Экономика
+        экономика: "iqtisodiyot",
+
+        // Бухгалтерия
+        бухгалтер: "buxgalteriyaHisobi",
+        "бухгалтерский учет": "buxgalteriyaHisobi",
+
+        // Туризм
+        туризм: "turizm",
+        "туризм и гостеприимство": "turizm",
+
+        // Языки
+        язык: "xorijiyTil",
+        "иностранный язык": "xorijiyTil",
+        английский: "xorijiyTil",
+
+        // История
+        история: "tarix",
+
+        // Математика
+        математика: "matematika",
+
+        // Психология
+        психология: "psixologiya",
+        психолог: "psixologiya",
+
+        // Архитектура
+        архитектура: "arxitektura",
+
+        // Образование
+        "дошкольное образование": "maktabgachaTalim",
+        "начальное образование": "boshlangichTalim",
+
+        // Логистика
+        логистика: "logistika",
+
+        // Специальная педагогика
+        "специальная педагогика": "maxsusPedagogika",
+
+        // Узбекский язык
+        "узбекский язык": "ozbekTili",
+
+        // Социальная работа
+        "социальная работа": "ijtimoiyIsh",
+      },
+      english: {
+        // Banking
+        bank: "bankIshi",
+        banking: "bankIshi",
+        banker: "bankIshi",
+
+        // Programming
+        programming: "dasturiyInjiniring",
+        "software engineering": "dasturiyInjiniring",
+        programmer: "dasturiyInjiniring",
+        coding: "dasturiyInjiniring",
+
+        // Computer
+        computer: "kompyuterInjiniringi",
+        "computer engineering": "kompyuterInjiniringi",
+        "information technology": "kompyuterInjiniringi",
+
+        // Finance
+        finance: "moliyaTexnologiyalar",
+        "financial technologies": "moliyaTexnologiyalar",
+
+        // Economics
+        economics: "iqtisodiyot",
+
+        // Accounting
+        accounting: "buxgalteriyaHisobi",
+        accountant: "buxgalteriyaHisobi",
+
+        // Tourism
+        tourism: "turizm",
+        "tourism and hospitality": "turizm",
+        hospitality: "turizm",
+
+        // Languages
+        language: "xorijiyTil",
+        "foreign language": "xorijiyTil",
+        english: "xorijiyTil",
+
+        // History
+        history: "tarix",
+
+        // Mathematics
+        mathematics: "matematika",
+        math: "matematika",
+
+        // Psychology
+        psychology: "psixologiya",
+        psychologist: "psixologiya",
+
+        // Architecture
+        architecture: "arxitektura",
+
+        // Education
+        "preschool education": "maktabgachaTalim",
+        "primary education": "boshlangichTalim",
+
+        // Logistics
+        logistics: "logistika",
+
+        // Special pedagogy
+        "special pedagogy": "maxsusPedagogika",
+
+        // Uzbek language
+        "uzbek language": "ozbekTili",
+
+        // Social work
+        "social work": "ijtimoiyIsh",
+      },
     }
 
     // Umumiy savollar uchun - YANGILANGAN VA KENGAYTIRILGAN
@@ -194,7 +287,7 @@ Faqat ushbu ma'lumotlarga asoslanib savollarga javob bering. Agar savol berilgan
         "online to'lash": "moliyaviyShartlar",
         "plastik karta": "moliyaviyShartlar",
         "to'lov usullari": "moliyaviyShartlar",
-        
+
         // Grant va stipendiya
         grant: "grantVaStipendiyalar",
         "grant o'rinlari": "grantVaStipendiyalar",
@@ -203,7 +296,7 @@ Faqat ushbu ma'lumotlarga asoslanib savollarga javob bering. Agar savol berilgan
         "prezident stipendiyasi": "grantVaStipendiyalar",
         "davlat granti": "grantVaStipendiyalar",
         "nomli stipendiya": "grantVaStipendiyalar",
-        
+
         // Qabul jarayoni
         qabul: "qabulJarayoni",
         "qabul muddati": "qabulJarayoni",
@@ -216,27 +309,27 @@ Faqat ushbu ma'lumotlarga asoslanib savollarga javob bering. Agar savol berilgan
         "kirish imtihoni": "qabulJarayoni",
         "test shakli": "qabulJarayoni",
         "test takrorlash": "qabulJarayoni",
-        "natijalar": "qabulJarayoni",
+        natijalar: "qabulJarayoni",
         hujjat: "qabulJarayoni",
         hujjatlar: "qabulJarayoni",
         "onlayn hujjat": "qabulJarayoni",
         "hujjat topshirish": "qabulJarayoni",
         "bepul hujjat": "qabulJarayoni",
         "shaxsiy kabinet": "qabulJarayoni",
-        
+
         // Joylashuv
         manzil: "joylashuvManzili",
         joy: "joylashuvManzili",
         "qayerda joylashgan": "joylashuvManzili",
         "universitet manzili": "joylashuvManzili",
-        
+
         // Yotoqxona
         yotoqxona: "infratuzilmaVaQulayliklar",
         ijara: "infratuzilmaVaQulayliklar",
         "talabalar yotoqxonasi": "infratuzilmaVaQulayliklar",
         "yotoqxona bepul": "infratuzilmaVaQulayliklar",
         "yashash sharoiti": "infratuzilmaVaQulayliklar",
-        
+
         // Aloqa
         telefon: "boglanishUchun",
         aloqa: "boglanishUchun",
@@ -246,7 +339,7 @@ Faqat ushbu ma'lumotlarga asoslanib savollarga javob bering. Agar savol berilgan
         vebsayt: "boglanishUchun",
         telegram: "boglanishUchun",
         instagram: "boglanishUchun",
-        
+
         // Ta'lim shakli va muddati
         "ta'lim shakli": "oquvJarayoni",
         kunduzgi: "oquvJarayoni",
@@ -261,25 +354,25 @@ Faqat ushbu ma'lumotlarga asoslanib savollarga javob bering. Agar savol berilgan
         "darslar boshlanadi": "oquvJarayoni",
         "oflayn dars": "oquvJarayoni",
         "onlayn dars": "oquvJarayoni",
-        
+
         // Magistratura
         magistratura: "oquvJarayoni",
         "magistratura bormi": "oquvJarayoni",
-        
+
         // Diplom
         diplom: "oquvJarayoni",
         "diplom tan olinadimi": "oquvJarayoni",
         "xorijda tan olinadimi": "oquvJarayoni",
         "davlat diplomi": "oquvJarayoni",
         "xalqaro sertifikat": "oquvJarayoni",
-        
+
         // IELTS va til sertifikatlari
         ielts: "chetTiliSertifikatiImtiyozlari",
         "ielts kerakmi": "chetTiliSertifikatiImtiyozlari",
         sertifikat: "chetTiliSertifikatiImtiyozlari",
         "chet tili": "chetTiliSertifikatiImtiyozlari",
         "til sertifikati": "chetTiliSertifikatiImtiyozlari",
-        
+
         // Ish bilan ta'minlash
         ish: "oquvJarayoni",
         "ish topish": "oquvJarayoni",
@@ -287,7 +380,7 @@ Faqat ushbu ma'lumotlarga asoslanib savollarga javob bering. Agar savol berilgan
         "bitiruvchilarga yordam": "oquvJarayoni",
         "yarim stavka": "qoshimchaMalumotlar",
         "karyera markazi": "oquvJarayoni",
-        
+
         // Sport va faoliyat
         sport: "infratuzilmaVaQulayliklar",
         "sport to'garaklari": "fanKlublar",
@@ -296,52 +389,52 @@ Faqat ushbu ma'lumotlarga asoslanib savollarga javob bering. Agar savol berilgan
         faoliyat: "fanKlublar",
         tadbirlar: "tadbirlar",
         festival: "tadbirlar",
-        
-        // Fakultet va yo'nalishlar
-      fakultet: "oquvJarayoni",
-      "nechta fakultet": "oquvJarayoni",
-      "yo'nalish": "oquvJarayoni",
-      "yo'nalishlar soni": "oquvJarayoni",
-      "nechta yo'nalish": "oquvJarayoni",
 
-    // Darslar
-    dars: "oquvJarayoni",
+        // Fakultet va yo'nalishlar
+        fakultet: "oquvJarayoni",
+        "nechta fakultet": "oquvJarayoni",
+        "yo'nalish": "oquvJarayoni", // <-- Tuzatilgan qator
+        "yo'nalishlar soni": "oquvJarayoni",
+        "nechta yo'nalish": "oquvJarayoni",
+
+        // Darslar
+        dars: "oquvJarayoni",
         darslar: "oquvJarayoni",
         "dars vaqti": "oquvJarayoni",
         "necha soat": "oquvJarayoni",
         "necha daqiqa": "oquvJarayoni",
-        "sessiya": "oquvJarayoni",
-        "imtihonlar": "oquvJarayoni",
-        
+        sessiya: "oquvJarayoni",
+        imtihonlar: "oquvJarayoni",
+
         // Rektor va boshqaruv
         rektor: "universitetHaqida",
         "rektor kim": "universitetHaqida",
-        
+
         // Imtiyozlar va chegirmalar
         imtiyoz: "moliyaviyShartlar",
         imtiyozlar: "moliyaviyShartlar",
         chegirma: "moliyaviyShartlar",
         "ijtimoiy imtiyozlar": "moliyaviyShartlar",
         "nogironlik imtiyozi": "moliyaviyShartlar",
-        
+
         // Amaliyot
         amaliyot: "oquvJarayoni",
         "amaliyot dasturlari": "oquvJarayoni",
         "amaliyot bazalari": "qoshimchaMalumotlar",
-        
+
         // Xalqaro hamkorlik
         xalqaro: "universitetHaqida",
         "xalqaro almashinuv": "universitetHaqida",
         "chet el": "universitetHaqida",
         "chet ellik": "qoshimchaMalumotlar",
-        "xorijlik": "universitetHaqida",
-        
+        xorijlik: "universitetHaqida",
+
         // Ko'chirish va perevod
         "ko'chirish": "perevod",
         perevod: "perevod",
         "o'qishni ko'chirish": "perevod",
         "kredit tan olish": "perevod",
-        
+
         // Infratuzilma
         kutubxona: "infratuzilmaVaQulayliklar",
         laboratoriya: "infratuzilmaVaQulayliklar",
@@ -349,12 +442,12 @@ Faqat ushbu ma'lumotlarga asoslanib savollarga javob bering. Agar savol berilgan
         "ovqatlanish joylari": "infratuzilmaVaQulayliklar",
         internet: "infratuzilmaVaQulayliklar",
         wifi: "infratuzilmaVaQulayliklar",
-        
+
         // Litsenziya va akkreditatsiya
         litsenziya: "universitetHaqida",
         akkreditatsiya: "universitetHaqida",
         "davlat litsenziyasi": "universitetHaqida",
-        
+
         // Yangi qo'shilgan kalit so'zlar
         "yozgi maktab": "qoshimchaMalumotlar",
         "harbiy kafedra": "qoshimchaMalumotlar",
@@ -366,8 +459,263 @@ Faqat ushbu ma'lumotlarga asoslanib savollarga javob bering. Agar savol berilgan
         "to'lov muddati": "moliyaviyShartlar",
         "shartnoma imzolash": "moliyaviyShartlar",
         "buxgalteriya bo'limi": "infratuzilmaVaQulayliklar",
-        "dasturiy tillar": "bakalavriYonalishlari"
-      }
+        "dasturiy tillar": "bakalavriYonalishlari",
+      },
+      russian: {
+        // Цена и оплата
+        цена: "kontraktNarxlari",
+        стоимость: "kontraktNarxlari",
+        "стоимость контракта": "kontraktNarxlari",
+        "стоимость обучения": "kontraktNarxlari",
+        оплата: "moliyaviyShartlar",
+        "способы оплаты": "moliyaviyShartlar",
+        рассрочка: "moliyaviyShartlar",
+
+        // Грант и стипендия
+        грант: "grantVaStipendiyalar",
+        "грантовые места": "grantVaStipendiyalar",
+        стипендия: "grantVaStipendiyalar",
+        "стипендия ректора": "grantVaStipendiyalar",
+        "президентская стипендия": "grantVaStipendiyalar",
+        "государственный грант": "grantVaStipendiyalar",
+
+        // Поступление
+        поступление: "qabulJarayoni",
+        "сроки поступления": "qabulJarayoni",
+        экзамен: "qabulJarayoni",
+        тест: "qabulJarayoni",
+        "вступительные экзамены": "qabulJarayoni",
+        "минимальный балл": "qabulJarayoni",
+        документы: "qabulJarayoni",
+        "подача документов": "qabulJarayoni",
+
+        // Местоположение
+        адрес: "joylashuvManzili",
+        "где находится": "joylashuvManzili",
+        "адрес университета": "joylashuvManzili",
+
+        // Общежитие
+        общежитие: "infratuzilmaVaQulayliklar",
+        "общежитие для студентов": "infratuzilmaVaQulayliklar",
+        "условия проживания": "infratuzilmaVaQulayliklar",
+
+        // Контакты
+        телефон: "boglanishUchun",
+        контакты: "boglanishUchun",
+        "номер телефона": "boglanishUchun",
+        сайт: "boglanishUchun",
+        "веб-сайт": "boglanishUchun",
+
+        // Форма обучения
+        "форма обучения": "oquvJarayoni",
+        дневная: "oquvJarayoni",
+        вечерняя: "oquvJarayoni",
+        заочная: "oquvJarayoni",
+        дистанционная: "oquvJarayoni",
+        "язык обучения": "oquvJarayoni",
+        "срок обучения": "oquvJarayoni",
+
+        // Магистратура
+        магистратура: "oquvJarayoni",
+        "есть ли магистратура": "oquvJarayoni",
+
+        // Диплом
+        диплом: "oquvJarayoni",
+        "признается ли диплом": "oquvJarayoni",
+        "государственный диплом": "oquvJarayoni",
+
+        // Сертификаты
+        "сертификат IELTS": "chetTiliSertifikatiImtiyozlari",
+        сертификат: "chetTiliSertifikatiImtiyozlari",
+        "языковой сертификат": "chetTiliSertifikatiImtiyozlari",
+
+        // Трудоустройство
+        работа: "oquvJarayoni",
+        "поиск работы": "oquvJarayoni",
+        трудоустройство: "oquvJarayoni",
+        "помощь выпускникам": "oquvJarayoni",
+
+        // Спорт и деятельность
+        спорт: "infratuzilmaVaQulayliklar",
+        "спортивные секции": "fanKlublar",
+        "научные клубы": "fanKlublar",
+        деятельность: "fanKlublar",
+        мероприятия: "tadbirlar",
+
+        // Факультеты и направления
+        факультет: "oquvJarayoni",
+        "сколько факультетов": "oquvJarayoni",
+        направление: "oquvJarayoni",
+        "количество направлений": "oquvJarayoni",
+        специальность: "oquvJarayoni",
+
+        // Занятия
+        занятия: "oquvJarayoni",
+        "время занятий": "oquvJarayoni",
+        "сколько часов": "oquvJarayoni",
+        сессия: "oquvJarayoni",
+        экзамены: "oquvJarayoni",
+
+        // Льготы и скидки
+        льготы: "moliyaviyShartlar",
+        скидка: "moliyaviyShartlar",
+        "социальные льготы": "moliyaviyShartlar",
+
+        // Практика
+        практика: "oquvJarayoni",
+        "программы практики": "oquvJarayoni",
+
+        // Международное сотрудничество
+        международное: "universitetHaqida",
+        "международный обмен": "universitetHaqida",
+        зарубежные: "universitetHaqida",
+
+        // Перевод
+        перевод: "perevod",
+        "перевод из другого вуза": "perevod",
+
+        // Инфраструктура
+        библиотека: "infratuzilmaVaQulayliklar",
+        лаборатория: "infratuzilmaVaQulayliklar",
+        "информационный центр": "infratuzilmaVaQulayliklar",
+        столовая: "infratuzilmaVaQulayliklar",
+        интернет: "infratuzilmaVaQulayliklar",
+
+        // Лицензия
+        лицензия: "universitetHaqida",
+        аккредитация: "universitetHaqida",
+        "государственная лицензия": "universitetHaqida",
+      },
+      english: {
+        // Price and payment
+        price: "kontraktNarxlari",
+        cost: "kontraktNarxlari",
+        "contract price": "kontraktNarxlari",
+        "tuition fee": "kontraktNarxlari",
+        payment: "moliyaviyShartlar",
+        "payment methods": "moliyaviyShartlar",
+        installment: "moliyaviyShartlar",
+
+        // Grant and scholarship
+        grant: "grantVaStipendiyalar",
+        "grant places": "grantVaStipendiyalar",
+        scholarship: "grantVaStipendiyalar",
+        "rector scholarship": "grantVaStipendiyalar",
+        "presidential scholarship": "grantVaStipendiyalar",
+        "state grant": "grantVaStipendiyalar",
+
+        // Admission
+        admission: "qabulJarayoni",
+        "admission period": "qabulJarayoni",
+        exam: "qabulJarayoni",
+        test: "qabulJarayoni",
+        "entrance exam": "qabulJarayoni",
+        "minimum score": "qabulJarayoni",
+        documents: "qabulJarayoni",
+        "document submission": "qabulJarayoni",
+
+        // Location
+        address: "joylashuvManzili",
+        location: "joylashuvManzili",
+        "where is located": "joylashuvManzili",
+        "university address": "joylashuvManzili",
+
+        // Dormitory
+        dormitory: "infratuzilmaVaQulayliklar",
+        "student dormitory": "infratuzilmaVaQulayliklar",
+        "living conditions": "infratuzilmaVaQulayliklar",
+        accommodation: "infratuzilmaVaQulayliklar",
+
+        // Contacts
+        phone: "boglanishUchun",
+        contact: "boglanishUchun",
+        "phone number": "boglanishUchun",
+        website: "boglanishUchun",
+
+        // Form of education
+        "form of education": "oquvJarayoni",
+        "full-time": "oquvJarayoni",
+        "part-time": "oquvJarayoni",
+        evening: "oquvJarayoni",
+        "distance learning": "oquvJarayoni",
+        "language of instruction": "oquvJarayoni",
+        "duration of study": "oquvJarayoni",
+
+        // Master's degree
+        "master's": "oquvJarayoni",
+        "master's degree": "oquvJarayoni",
+        "is there master's": "oquvJarayoni",
+
+        // Diploma
+        diploma: "oquvJarayoni",
+        "is diploma recognized": "oquvJarayoni",
+        "state diploma": "oquvJarayoni",
+
+        // Certificates
+        "IELTS certificate": "chetTiliSertifikatiImtiyozlari",
+        certificate: "chetTiliSertifikatiImtiyozlari",
+        "language certificate": "chetTiliSertifikatiImtiyozlari",
+
+        // Employment
+        job: "oquvJarayoni",
+        work: "oquvJarayoni",
+        employment: "oquvJarayoni",
+        "job placement": "oquvJarayoni",
+        "career support": "oquvJarayoni",
+
+        // Sports and activities
+        sport: "infratuzilmaVaQulayliklar",
+        "sports clubs": "fanKlublar",
+        "science clubs": "fanKlublar",
+        activities: "fanKlublar",
+        events: "tadbirlar",
+
+        // Faculties and directions
+        faculty: "oquvJarayoni",
+        "how many faculties": "oquvJarayoni",
+        direction: "oquvJarayoni",
+        "number of directions": "oquvJarayoni",
+        major: "oquvJarayoni",
+        specialty: "oquvJarayoni",
+
+        // Classes
+        classes: "oquvJarayoni",
+        "class time": "oquvJarayoni",
+        "how many hours": "oquvJarayoni",
+        session: "oquvJarayoni",
+        exams: "oquvJarayoni",
+
+        // Benefits and discounts
+        benefits: "moliyaviyShartlar",
+        discount: "moliyaviyShartlar",
+        "social benefits": "moliyaviyShartlar",
+
+        // Practice
+        practice: "oquvJarayoni",
+        internship: "oquvJarayoni",
+        "practice programs": "oquvJarayoni",
+
+        // International cooperation
+        international: "universitetHaqida",
+        "international exchange": "universitetHaqida",
+        foreign: "universitetHaqida",
+
+        // Transfer
+        transfer: "perevod",
+        "transfer from another university": "perevod",
+
+        // Infrastructure
+        library: "infratuzilmaVaQulayliklar",
+        laboratory: "infratuzilmaVaQulayliklar",
+        "information center": "infratuzilmaVaQulayliklar",
+        cafeteria: "infratuzilmaVaQulayliklar",
+        internet: "infratuzilmaVaQulayliklar",
+
+        // License
+        license: "universitetHaqida",
+        accreditation: "universitetHaqida",
+        "state license": "universitetHaqida",
+      },
     }
 
     // Yo'nalish nomlarini tekshirish
@@ -524,17 +872,17 @@ if (process.argv[1] === new URL(import.meta.url).pathname) {
 
           console.log("\n--- Test Case 1: Tegishli savol ---")
           const question1 = "Veb sayt yaratish bo'yicha xizmatlar bormi?"
-          const response1 = await usatGenerator.generate(question1)
+          const response1 = await usatGenerator.generateInLanguage(question1, "uzbek")
           console.log(`Savol: ${question1}\nJavob: ${response1}`)
 
           console.log("\n--- Test Case 2: Yana bir tegishli savol ---")
           const question2 = "USAT kompaniyasining aloqa ma'lumotlari qanday?"
-          const response2 = await usatGenerator.generate(question2)
+          const response2 = await usatGenerator.generateInLanguage(question2, "uzbek")
           console.log(`Savol: ${question2}\nJavob: ${response2}`)
 
           console.log("\n--- Test Case 3: Aloqasi yo'q savol ---")
           const question3 = "Eng yaxshi mashina qaysi?"
-          const response3 = await usatGenerator.generate(question3)
+          const response3 = await usatGenerator.generateInLanguage(question3, "uzbek")
           console.log(`Savol: ${question3}\nJavob: ${response3}`)
         } catch (error) {
           console.log(`\nIshga tushirish xatosi: ${error.message}`)
